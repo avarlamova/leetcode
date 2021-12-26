@@ -1,6 +1,4 @@
 function number2words(n) {
-  let resString = "";
-
   let ten = [
     "zero",
     "one",
@@ -40,19 +38,34 @@ function number2words(n) {
   }
 
   if (n > 19 && n < 100) {
-    // let firstPlace = parseInt(n.toString()[0]) // старший разряд
-    console.log(hundred[n % 10]);
+    //     let a= n[0]
+    //     let b = n[1]
+
+    //     return hundred[a-1] + '-' + ten[b]
 
     if (n % 10 === 0) {
-      return hundred[(n % 10) - 1];
+      return hundred[Math.floor(n / 10) - 1];
     } else {
-      resString += hundred[(n % 10) - 1] + "-" + ten[n % 10];
-      return resString;
+      return hundred[Math.floor(n / 10) - 1] + "-" + ten[n % 10];
     }
   }
 
-  if (n > 100 && n < 1000) {
-    let firstPlace = parseInt(n.toString()[0]); // старший разряд
-    return;
-  } else return "fu";
+  if (n > 99 && n < 1000) {
+    if (n % 100 === 0) {
+      return ten[Math.floor(n / 100)] + " hundred";
+    }
+
+    if (n % 100 < 11) {
+      return ten[Math.floor(n / 100)] + " hundred " + ten[n % 100];
+    } else {
+      console.log(Math.floor(n / 10), n);
+      return (
+        ten[Math.floor(n / 100)] +
+        " hundred " +
+        hundred[Math.floor(n / 100) - 1] +
+        "-" +
+        ten[n % 10]
+      );
+    }
+  } else return g;
 }
