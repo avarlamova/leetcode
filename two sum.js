@@ -29,3 +29,17 @@ var twoSum = function (nums, target) {
     }
   }
 };
+
+const twoSum = (nums, target) => {
+  let firstIdx;
+  let secondIdx;
+  for (let i = 0; i < nums.length; i++) {
+    const current = nums[i];
+
+    for (let j = i + 1; j < nums.length; j++) {
+      if (current + nums[j] === target) {
+        return [i, j];
+      }
+    }
+  }
+};
