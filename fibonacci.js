@@ -4,8 +4,9 @@
 // fib(10); // 55
 //  Аргументом является порядковый номер числа, нумерация чисел в последовательности начинается с нуля.
 
+// O (n)
 function fib(n) {
-  if (n === 0 || n === 1) {
+  if (n < 2) {
     //первые два числа равны 0 и 1
     return n;
   } else {
@@ -17,6 +18,21 @@ function fib(n) {
     return fibArr[n];
   }
 }
+
+//recursion
+// O (2^n)
+function recursiveFib(n) {
+  if (n < 2) {
+    //первые два числа равны 0 и 1
+    return n;
+  } else {
+    return recursiveFib(n - 2) + recursiveFib(n - 1);
+  }
+}
 console.log(fib(3));
 console.log(fib(5));
 console.log(fib(10));
+
+console.log(recursiveFib(3));
+console.log(recursiveFib(5));
+console.log(recursiveFib(10));
