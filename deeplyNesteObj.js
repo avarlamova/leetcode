@@ -5,8 +5,7 @@ function get(obj, path) {
     const currentKey = objKeys.shift();
     return get(obj[currentKey], objKeys.join("."));
   } else {
-    const currentKey = objKeys[0];
-    return obj[currentKey];
+    return obj[objKeys[0]];
   }
 }
 
