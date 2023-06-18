@@ -28,3 +28,21 @@ var partitionString = function(s) {
     }
     return counter
 };
+
+// less time and space complexity
+var partitionString1 = function(s) {
+    let alreadySeen = s[0];
+    let counter = 1;
+
+    for (let i = 1; i < s.length; i++) {
+        const char = s[i]
+        if (alreadySeen.includes(char)) {
+            counter++;
+            alreadySeen = char
+        }
+        else {
+            alreadySeen += char
+        }
+    }
+    return counter
+};
